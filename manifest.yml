@@ -1,8 +1,8 @@
-applications:
-  - name: pal-tracker
-    path: build/libs/pal-tracker-1.0.0.jar
-    routes:
-      - route: pal-tracker-govind-murugesan.cfapps.io
-    env:
-      WELCOME_MESSAGE: Hello from the review environment
-      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      applications:
+        - name: pal-tracker
+          path: build/libs/pal-tracker-1.0.0.jar
+          routes:
+            - route: pal-tracker-govind-murugesan.cfapps.io
+          env:
+            WELCOME_MESSAGE: Hello from the review environment
+            JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'

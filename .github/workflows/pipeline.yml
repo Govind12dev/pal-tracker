@@ -27,10 +27,6 @@ jobs:
         echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
         sudo apt-get update
         sudo apt-get install cf-cli
-    - name: Download artifact
-      uses: actions/download-artifact@v1
-      with:
-        name: pal-tracker
     - name: Deploy to cf
       run: |
         cf api "$CF_API_URL"

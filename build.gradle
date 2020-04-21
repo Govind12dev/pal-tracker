@@ -19,7 +19,7 @@ jar {
         )
     }
     destinationDirectory = file("$rootDir/my-jar")
-    archivesBaseName = "pal-tracker-1.0.0"
+    archivesBaseName = "pal-tracker"
 }
 
 dependencies {

@@ -19,7 +19,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: pal-tracker
-        path: build/libs/pal-tracker.jar
+        path: build/libs/pal-tracker-1.0.0.jar
 
   deploy:
     needs: build-and-publish

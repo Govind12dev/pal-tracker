@@ -15,11 +15,13 @@ jobs:
           java-version: 11
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+      - name: Build with Gradle
+        run: ./gradlew build
       - name: Publish artifact
         uses: actions/upload-artifact@v1
         with:
           name: pal-tracker
-          path: ~/build/libs/pal-tracker.jar
+          path: build/libs/pal-tracker.jar
 
   deploy:
     needs: build-and-publish

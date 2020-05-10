@@ -15,11 +15,10 @@ jobs:
         java-version: 11
     - name: Startup test database instance
       run: sudo service mysql start
-    - name: Make gradlew executable
-      run: chmod +x testMigrate
     - name: Create test database
       run: |
         mysql -uroot -proot < databases/tracker/create_databases.sql
+        chmod +x testMigrate
         ./gradlew testMigrate
     - name: Make gradlew executable
       run: chmod +x ./gradlew

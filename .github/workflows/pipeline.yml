@@ -15,9 +15,10 @@ jobs:
         java-version: 11
     - name: Startup test database instance
       run: sudo service mysql start
+    - name: Make gradlew executable
+      run: chmod +x testMigrate
     - name: Create test database
       run: |
-        sudo /etc/init.d/mysql start
         mysql -uroot -proot < databases/tracker/create_databases.sql
         ./gradlew testMigrate
     - name: Make gradlew executable
@@ -70,6 +71,8 @@ jobs:
         sudo apt-get update
         sudo apt-get install cf-cli
         curl https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.2.1/flyway-commandline-5.2.1-linux-x64.tar.gz | tar xvz
+    - name: Make gradlew executable
+      run: chmod +x scripts/migrate-databases.sh
     - name: Migate tracker-database
       run: |
         cf api "$CF_API_URL"
